@@ -54,7 +54,6 @@ const route = () => {
 
     router.route('/sign-up').post((req,res)=>{
         const {email,password}  = req.body;
-        console.log(req.body);
         const passwordHashed = crypto.createHmac('sha256',config.passSecret).update(password).digest('hex');
         
         const newUser = new User({
